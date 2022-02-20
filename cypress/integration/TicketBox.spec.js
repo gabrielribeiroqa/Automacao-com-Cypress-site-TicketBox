@@ -28,13 +28,19 @@ describe("ACESSAR O SITE", () => {
     })
 
     //CAMPO DE TEXTO SPECIAL REQUESTS
-    describe('PREENCHENDO CAMPO DE TEXTO', () => {
-        it("campo de texto",()=> {
-                cy.get(loc.CAMP_DE_TEXTO.txt).should('be.empty').and('be.visible').type('TESTE')
+    describe('PREENCHENDO CAMPO DE TEXTO COM FIXTURE', () => {
+        it("campo de texto", function () {
+            cy.fixture('dadosDeTexte').as('textodeteste').then((t) => {
+                this.textodeteste = t
+                cy.get(loc.CAMP_DE_TEXTO.txt).should('be.empty').and('be.visible').type(this.t.texto)
+
             })
+
         })
 
     })
+
+})
 
 describe('SELECT SIMPLES', () => {
     it('campo de select selecionando apenas um valor', () => {
