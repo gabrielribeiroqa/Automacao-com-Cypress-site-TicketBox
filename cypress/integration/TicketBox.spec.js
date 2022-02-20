@@ -32,7 +32,7 @@ describe("ACESSAR O SITE", () => {
         it("campo de texto", function () {
             cy.fixture('dadosDeTexte').as('textodeteste').then((t) => {
                 this.textodeteste = t
-                cy.get(loc.CAMP_DE_TEXTO.txt).should('be.empty').and('be.visible').type(this.t.texto)
+                cy.get(loc.CAMP_DE_TEXTO.txt).should('be.empty').and('be.visible').type(this.textodeteste.texto)
 
             })
 
