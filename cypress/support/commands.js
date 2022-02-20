@@ -50,8 +50,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-//OBS 1: CASO TENHA LOCATORS ELE PRECISA SER IMPORTADO
-//LOGIN É A VARIAVEL E VAI PASSAR 2 PARAMENTROS
+
 import loc from '../support/locatorsTicketBox'
 
 var nome ={
